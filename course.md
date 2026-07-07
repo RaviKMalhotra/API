@@ -144,27 +144,27 @@ By the end of this program, you will be able to:
 
 By the end, you should be comfortable discussing API architecture, implementing production-ready APIs, and evaluating different API technologies for different scenarios.
 
-Chapter 6 – Course Structure
+# Chapter 6 – Course Structure
 
 The course is divided into progressive learning stages.
 
 We begin with foundational concepts.
 
-Once those foundations are solid, we move into protocols and architectural styles such as REST, SOAP, GraphQL, and gRPC.
+Once those foundations are solid, we move into protocols and architectural styles such as **REST, SOAP, GraphQL, and gRPC**.
 
 After that, we explore authentication, security, testing, governance, performance, cloud-native APIs, AI integrations, and enterprise architecture.
 
-Each module builds on the previous one.
+**Each module builds on the previous one**.
 
 For this reason, it is strongly recommended that you complete the modules in order rather than skipping ahead.
 
-Chapter 7 – Learning Philosophy
+# Chapter 7 – Learning Philosophy
 
 Learning APIs is similar to learning a spoken language.
 
 You cannot become fluent by reading definitions alone.
 
-You become fluent through repeated exposure, practice, and application.
+You become fluent **through repeated exposure, practice, and application**.
 
 Throughout this course, every major topic will include:
 
@@ -181,38 +181,37 @@ Hands-on exercises
 
 This combination is intended to help you move beyond theory and develop practical engineering intuition.
 
-Chapter 8 – Tools Used Throughout the Course
+# Chapter 8 – Tools Used Throughout the Course
 
-To keep the focus on APIs rather than a specific programming language, the concepts in this course are language-agnostic.
+To keep the focus on APIs rather than a specific programming language, the concepts in this **course are language-agnostic**.
 
 Where implementation is required, examples may be provided in one or more popular languages.
 
-You will also become familiar with common API development and testing tools, including:
+You will also become familiar with **common API development and testing tools**, including:
+  1. Postman
+  2. curl
+  3. HTTPie
+  4. Swagger UI
+  5. OpenAPI
+  6. Insomnia (optional)
 
-Postman
-curl
-HTTPie
-Swagger UI
-OpenAPI
-Insomnia (optional)
+As the course progresses, additional technologies may be introduced for specific topics, such as **GraphQL tooling, Protocol Buffers, or API gateways**.
 
-As the course progresses, additional technologies may be introduced for specific topics, such as GraphQL tooling, Protocol Buffers, or API gateways.
-
-Chapter 9 – How to Get the Most from This Course
+# Chapter 9 – How to Get the Most from This Course
 
 To maximize your learning:
 
-Follow the modules in order.
-Build every practical exercise yourself.
-Experiment with the code instead of copying it blindly.
-Read the documentation linked throughout the course.
-Take the quizzes seriously.
-Review the summary at the end of each module.
-Revisit earlier modules whenever necessary.
+- Follow the modules in order.
+- Build every practical exercise yourself.
+- Experiment with the code instead of copying it blindly.
+- Read the documentation linked throughout the course.
+- Take the quizzes seriously.
+- Review the summary at the end of each module.
+- Revisit earlier modules whenever necessary.
 
 Learning software engineering is an iterative process. Concepts often become clearer after they are applied in multiple contexts.
 
-Chapter 10 – A Note About the Future
+# Chapter 10 – A Note About the Future
 
 The API landscape continues to evolve rapidly.
 
@@ -224,7 +223,7 @@ A well-designed API is ultimately about clear communication between systems. Tha
 
 By focusing on the underlying concepts rather than only specific tools or frameworks, this course aims to give you knowledge that will remain relevant throughout your career.
 
-Module Summary
+# Module Summary
 
 In this introductory module, we established the purpose and scope of the API Mastery Program. We explored why APIs are foundational to modern software engineering, who this course is designed for, and the learning philosophy that will guide every subsequent module. We also outlined the technologies, tools, and progression you can expect as you move from beginner concepts to enterprise API architecture.
 
