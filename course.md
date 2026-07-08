@@ -830,26 +830,22 @@ They don't.
 - Throughout this course, we'll group APIs into three broad categories:
 
 1. Based on where they are used
-
-Examples:
-
-Library APIs
-Operating System APIs
-Hardware APIs
-Database APIs
+- Examples:
+  - Library APIs
+  - Operating System APIs
+  - Hardware APIs
+  - Database APIs
 
 2. Based on how systems communicate
-
-Examples:
-
-REST
-SOAP
-GraphQL
-gRPC
-WebSocket
+- Examples:
+  - REST
+  - SOAP
+  - GraphQL
+  - gRPC
+  - WebSocket
 Server-Sent Events
 
-3. Based on who can access them
+3. Based on who can access them  
 
 Examples:
 
