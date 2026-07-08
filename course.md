@@ -780,3 +780,442 @@ Most importantly, we established a foundational mental model:
 An API is not merely a technology or a URL. It is a carefully designed contract that allows independent systems to communicate safely, predictably, and efficiently while hiding unnecessary complexity.
 
 This idea will remain central throughout the rest of the course.
+
+
+# Module 6 – Types of APIs
+
+Understanding the Complete API Ecosystem
+Difficulty: Beginner → Intermediate
+Estimated Reading Time: 2.5–3 Hours
+Estimated Video Duration: 3–4 Hours
+
+Introduction
+
+- If you've spent any time reading programming blogs or watching tutorials, you've probably heard people say things like:
+"I built an API."
+Or,
+"The frontend consumes the API."
+More often than not, they're talking about a REST API.
+And while there's nothing wrong with that, it creates a very common misunderstanding.
+**Many developers unknowingly grow up believing that REST and API mean the same thing**.
+They don't.
+
+- In fact, **REST APIs** represent **only a small part of the API landscape**.
+- Imagine someone saying,
+- "Every vehicle is a car."
+- That would obviously be incorrect.
+- Cars are vehicles.
+- But so are buses.
+- Motorcycles.
+- Ships.
+- Helicopters.
+- Trains.
+- Airplanes.
+
+- The same idea applies here.
+- REST is an API.
+- GraphQL is an API.
+- SOAP is an API.
+- The Camera API on your phone is also an API.
+- Even the Python math module exposes an API.
+
+- By the end of this module, you'll stop thinking of APIs as "URLs on the Internet."
+- Instead, you'll begin seeing APIs everywhere.
+
+# Chapter 1 – How Can We Classify APIs?
+
+- Before we explore individual API technologies, it's helpful to organize them.
+- There isn't one universally accepted classification.
+- Different books classify APIs in different ways.
+- Throughout this course, we'll group APIs into three broad categories:
+
+1. Based on where they are used
+
+Examples:
+
+Library APIs
+Operating System APIs
+Hardware APIs
+Database APIs
+
+2. Based on how systems communicate
+
+Examples:
+
+REST
+SOAP
+GraphQL
+gRPC
+WebSocket
+Server-Sent Events
+
+3. Based on who can access them
+
+Examples:
+
+Public APIs
+Private APIs
+Partner APIs
+Internal APIs
+
+This classification isn't the only possible one, but it's practical and widely used in industry discussions.
+
+Chapter 2 – Library APIs
+
+Let's begin with the simplest kind.
+
+Every programming language provides libraries.
+
+Python has:
+
+math
+datetime
+json
+os
+pathlib
+
+Java has:
+
+Collections
+Streams
+IO
+Concurrency
+
+When you write:
+
+import math
+
+result = math.sqrt(81)
+
+you're interacting with the public interface provided by the math library.
+
+Notice something interesting.
+
+There is no network.
+
+No server.
+
+No HTTP request.
+
+No JSON.
+
+Yet this is still an API.
+
+The library exposes functions.
+
+You call those functions.
+
+The library returns results.
+
+That's software communicating through a defined interface.
+
+Many developers use library APIs every single day without realizing they're using APIs.
+
+Chapter 3 – Operating System APIs
+
+Applications rarely communicate directly with computer hardware.
+
+Imagine writing a program that needs to save a file.
+
+You don't manually write bits to a hard drive.
+
+Instead, you ask the operating system.
+
+When you create a file, open a folder, allocate memory, or start a process, you're calling operating system APIs.
+
+Examples include:
+
+File APIs
+Memory management APIs
+Process management APIs
+Networking APIs
+Threading APIs
+
+Without these APIs, every application would need to know how every piece of hardware worked.
+
+That would make software development almost impossible.
+
+The operating system acts as an intermediary, exposing stable interfaces while hiding the complexity underneath.
+
+Chapter 4 – Hardware APIs
+
+Modern devices contain an astonishing amount of hardware.
+
+A smartphone alone includes:
+
+Cameras
+GPS
+Bluetooth
+Wi-Fi
+NFC
+Accelerometer
+Gyroscope
+Fingerprint scanner
+Face recognition sensors
+
+Applications don't communicate directly with these components.
+
+Instead, the operating system exposes hardware APIs.
+
+For example:
+
+A camera application requests access to the Camera API.
+
+A fitness application accesses the Accelerometer API.
+
+A navigation application communicates through the Location API.
+
+The application doesn't need to understand how the camera sensor captures light or how GPS satellites calculate position.
+
+It simply interacts with an interface.
+
+That's the beauty of APIs—they hide complexity while exposing useful capabilities.
+
+Chapter 5 – Database APIs
+
+Databases also expose APIs.
+
+Whether you're working with MySQL, PostgreSQL, MongoDB, Redis, or another database system, your application doesn't manipulate storage devices directly.
+
+Instead, it communicates through a database interface.
+
+For example, your application may request:
+
+Create a record
+Read data
+Update information
+Delete a record
+
+These operations are often called CRUD (Create, Read, Update, Delete).
+
+Although we'll discuss CRUD later in the course, it's useful to recognize that databases also communicate through APIs.
+
+In fact, many database drivers are simply client libraries built around those APIs.
+
+Chapter 6 – Web APIs
+
+Now we arrive at the type of API most developers recognize.
+
+A Web API allows applications to communicate over a network.
+
+For example:
+
+A weather application requests today's forecast.
+
+An e-commerce application retrieves product details.
+
+A banking application checks an account balance.
+
+A payment gateway processes a transaction.
+
+Unlike library APIs, Web APIs usually involve a client and a server communicating across a network.
+
+The client sends a request.
+
+The server processes it.
+
+The server returns a response.
+
+This is the category we'll spend the majority of the course exploring.
+
+Chapter 7 – REST APIs
+
+REST is probably the most widely used style for building Web APIs today.
+
+Instead of exposing operations like:
+
+CreateOrder()
+DeleteCustomer()
+UpdateInvoice()
+
+REST encourages developers to think in terms of resources:
+
+POST   /orders
+
+DELETE /customers/15
+
+PATCH  /invoices/42
+
+REST became incredibly popular because it aligns naturally with HTTP and the architecture of the web.
+
+We'll dedicate several modules to REST later in the course, so for now it's enough to recognize that REST is a style—not the definition of an API.
+
+Chapter 8 – SOAP APIs
+
+Before REST became dominant, many enterprise organizations relied heavily on SOAP.
+
+SOAP emphasizes:
+
+Strict contracts
+Formal message structures
+Enterprise security
+Reliability
+Standardization
+
+Banks, insurance companies, healthcare organizations, and government systems still use SOAP extensively.
+
+Although SOAP receives less attention in modern tutorials, it's far from obsolete.
+
+If you work in enterprise software, there's a good chance you'll encounter it.
+
+Chapter 9 – GraphQL APIs
+
+As applications became more interactive, developers discovered that one REST endpoint sometimes returned too much data—or not enough.
+
+Facebook introduced GraphQL to solve this problem.
+
+Instead of the server deciding exactly what data to return, the client specifies the fields it needs.
+
+That flexibility can significantly reduce unnecessary data transfer, especially in complex applications.
+
+GraphQL isn't intended to replace REST.
+
+It simply addresses a different set of requirements.
+
+Chapter 10 – gRPC APIs
+
+Google developed gRPC for communication between large numbers of internal services.
+
+Compared to JSON-based APIs, gRPC is generally faster and more compact because it uses Protocol Buffers for serialization.
+
+It's particularly well suited to:
+
+Internal microservices
+High-performance systems
+Distributed applications
+Cloud-native platforms
+
+While REST is often chosen for public APIs, gRPC is frequently preferred for service-to-service communication inside large systems.
+
+Chapter 11 – WebSocket APIs
+
+Traditional web communication follows a request-response model.
+
+The client asks.
+
+The server answers.
+
+Then the conversation ends.
+
+But some applications require continuous communication.
+
+Examples include:
+
+Chat applications
+Multiplayer games
+Stock trading platforms
+Live sports scores
+Collaborative editing tools
+
+WebSockets allow both client and server to exchange messages whenever necessary, without reopening a connection each time.
+
+This creates much more responsive, real-time experiences.
+
+Chapter 12 – Server-Sent Events (SSE)
+
+Sometimes communication only needs to flow in one direction.
+
+The server sends updates.
+
+The client listens.
+
+Examples include:
+
+Breaking news feeds
+Live scoreboards
+Notification systems
+Monitoring dashboards
+
+Server-Sent Events (SSE) provide a lightweight alternative to WebSockets when bidirectional communication isn't required.
+
+Choosing SSE instead of WebSockets in these scenarios often results in a simpler architecture.
+
+Chapter 13 – AI APIs
+
+One of the fastest-growing areas in software today is AI.
+
+Modern AI systems expose APIs that allow applications to:
+
+Generate text
+Create images
+Recognize speech
+Translate languages
+Produce embeddings
+Classify content
+Summarize documents
+
+Interestingly, the interaction pattern remains familiar.
+
+The application sends a request.
+
+The AI service processes it.
+
+A response is returned.
+
+The underlying intelligence may be revolutionary, but the API remains the bridge between the application and the model.
+
+Chapter 14 – Public, Private, Partner, and Internal APIs
+
+Not every API is meant for everyone.
+
+Organizations classify APIs based on who can access them.
+
+Public APIs
+
+Available to external developers.
+
+Examples include weather services, payment gateways, and mapping platforms.
+
+Private APIs
+
+Accessible only within a specific application or product.
+
+These are often hidden from external users.
+
+Internal APIs
+
+Used inside an organization to allow different teams and systems to communicate.
+
+Large companies may operate thousands of internal APIs that customers never see.
+
+Partner APIs
+
+Shared only with approved business partners.
+
+For example, an airline may expose booking APIs to travel agencies but not to the general public.
+
+Understanding these categories is important because API design often changes depending on the intended audience.
+
+Architect's Insight
+
+One of the habits I've noticed among experienced engineers is that they rarely ask:
+
+"Which API technology should we use?"
+
+Instead, they ask:
+
+"What problem are we trying to solve?"
+
+That small change in thinking makes a huge difference.
+
+If you're building a public developer platform, REST might be an excellent choice.
+
+If you're connecting hundreds of internal services, gRPC may be a better fit.
+
+If your frontend needs flexible data retrieval, GraphQL could make more sense.
+
+The technology should always follow the problem—not the other way around.
+
+This mindset will save you from chasing trends and help you make better architectural decisions throughout your career.
+
+Module Summary
+
+This module expanded our understanding of APIs far beyond the web. We explored APIs in programming languages, operating systems, hardware, databases, cloud services, AI platforms, and modern web architectures. Along the way, we introduced several important API styles—including REST, SOAP, GraphQL, gRPC, WebSockets, and Server-Sent Events—and discussed the different problems they were designed to solve.
+
+Perhaps the most important takeaway is this:
+
+An API is not defined by the technology it uses. It is defined by the interface it provides.
+
+Whether it's a Python library, a camera on your smartphone, a cloud storage service, or a payment platform, the underlying principle remains exactly the same: expose useful capabilities through a stable, well-defined interface while hiding unnecessary complexity.
+
+In the next module, we'll dive into one of the most important foundations of modern APIs: HTTP. Before we can truly understand REST—or most web APIs—we need to understand the language they speak. We'll examine HTTP from the ground up, exploring how requests, responses, methods, headers, and status codes work together to make communication across the web possible.
